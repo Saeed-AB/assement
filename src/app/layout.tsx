@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import AppNavigation from "@/components/app-navigation";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +28,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header>
+          <div className="flex justify-between bg-black text-white p-4">
+            <h1>IZAM</h1>
+            <div className="flex gap-4 items-center">
+              <h3>HOME</h3>
+              <h3>JOBS</h3>
+            </div>
+          </div>
+        </header>
+
+        <div className="flex h-[calc(100vh-56px)] p-4 flex-col md:flex-row">
+          <AppNavigation />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );
