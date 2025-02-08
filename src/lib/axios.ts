@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 
-const baseUrl = 'http://localhost:8081'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const http = axios.create({
   baseURL: baseUrl,
   headers: {
